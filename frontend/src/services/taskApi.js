@@ -1,4 +1,4 @@
-// CHANGE: Pointed to port 5000 (your Node.js backend) instead of 3000
+
 const API_URL = 'http://localhost:5000/api/tasks';
 
 // Helper to handle standardizing responses safely
