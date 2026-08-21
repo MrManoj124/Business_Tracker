@@ -54,4 +54,3 @@ const deleteTask = async (id) => {
     return handleResponse(response);
 }
 
-export { fetchTasks, createTask, updateTaskStatus, deleteTask };
