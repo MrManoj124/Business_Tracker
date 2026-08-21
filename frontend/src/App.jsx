@@ -60,7 +60,8 @@ export default function App() {
   };
 
   return (
-    <main classNa">
+    <main className="app-shell">
+      <aside className="info-rail">
         <div className="rail-brand">BUSINESS<br /><span>TRACKER</span></div>
         <div className="rail-rule" />
         <p className="rail-kicker">WORKSPACE</p>
