@@ -30,4 +30,9 @@ export default function TaskForm({ onTaskCreated }) {
         <option value="medium">Medium Priority</option>
         <option value="high">High Priority</option>
       </select>
-      <button type="submit" style={{ padding: '8px 12px', cursor: 'poi
+      <button type="submit" style={{ padding: '8px 12px', cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+        <FiPlus /> Add Task
+      </button>
+    </form>
+  );
+}
