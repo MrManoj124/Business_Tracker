@@ -19,6 +19,8 @@ export default function TaskForm({ onTaskCreated }) {
         <option value="medium">Medium Priority</option>
         <option value="high">High Priority</option>
         </select>
+      </label>
+      <button type="submit" className="add-task-btn">
         <FiPlus /> Add Task
       </button>
     </form>
