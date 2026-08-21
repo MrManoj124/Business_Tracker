@@ -60,30 +60,18 @@ export default function App() {
   };
 
   return (
-   
-
-      {notification && (
-        <div className={`notification ${notification.type}`}>
-          {notification.message}
+    <main className="app-shell">
+      <aside className="info-rail">
+        <div className="rail-brand">BUSINESS<br /><span>TRACKER</span></div>
+        <div className="rail-rule" />
+        <p className="rail-kicker">WORKSPACE</p>
+        <h1>Weekly<br />Report<br /><strong>Tracker</strong></h1>
+        <p className="rail-copy">Keep your weekly priorities visible, current, and moving forward.</p>
+        <div className="rail-meta">
+          <div><span>VIEW</span><strong>{filter}</strong></div>
+          <div><span>TOTAL TASKS</span><strong>{tasks.length}</strong></div>
         </div>
-      )}
+        <div className="rail-footer">BUSINESS OPERATIONS<br />2026 EDITION</div>
+      </aside>
 
-      <TaskForm onTaskCreated={handleCreate} />
-
-      <div className="filter-container" aria-label="Filter tasks">
-        {['all', 'pending', 'completed'].map((status) => (
-          <button
-            key={status}
-            onClick={() => setFilter(status)}
-            className={`filter-btn ${filter === status ? 'active' : ''}`}
-          >
-            {status}
-          </button>
-        ))}
-      </div>
-
-      <TaskList tasks={tasks} onStatusChange={handleStatusChange} onDelete={handleDelete} />
-     
-  );
-}
-
+      <section class
