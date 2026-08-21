@@ -60,36 +60,22 @@ export default function App() {
   };
 
   return (
-    <div style={{ maxWidth: '600px', margin: '40px auto', fontFamily: 'sans-serif', padding: '0 16px' ,backgroundColor:'#57595B'}}>
-      <h2>Weekly Report Tracker</h2>
-      
-      {/* Notification Banner */}
+   
+
       {notification && (
-        <div style={{
-          padding: '10px',
-          marginBottom: '15px',
-          borderRadius: '4px',
-          backgroundColor: notification.type === 'error' ? '#fee2e2' : '#dcfce7',
-          color: notification.type === 'error' ? '#991b1b' : '#166534',
-          border: `1px solid ${notification.type === 'error' ? '#f87171' : '#4ade80'}`
-        }}>
+        <div className={`notification ${notification.type}`}>
           {notification.message}
         </div>
       )}
 
       <TaskForm onTaskCreated={handleCreate} />
 
-      <div style={{ marginBottom: '16px', display: 'flex', gap: '8px' }}>
+      <div className="filter-container" aria-label="Filter tasks">
         {['all', 'pending', 'completed'].map((status) => (
           <button
             key={status}
             onClick={() => setFilter(status)}
-            style={{
-              fontWeight: filter === status ? 'bold' : 'normal',
-              textTransform: 'capitalize',
-              cursor: 'pointer',
-              padding: '6px 12px'
-            }}
+            className={`filter-btn ${filter === status ? 'active' : ''}`}
           >
             {status}
           </button>
@@ -97,7 +83,7 @@ export default function App() {
       </div>
 
       <TaskList tasks={tasks} onStatusChange={handleStatusChange} onDelete={handleDelete} />
-    </div>
+     
   );
 }
 

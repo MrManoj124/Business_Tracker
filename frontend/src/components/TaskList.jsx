@@ -2,7 +2,7 @@ import TaskItem from './TaskItem';
 
 export default function TaskList({ tasks, onStatusChange, onDelete }) {
   if (tasks.length === 0) {
-    return <p>No tasks found.</p>;
+    return <p className="task-list-empty">No tasks found.</p>;
   }
 
   return (
