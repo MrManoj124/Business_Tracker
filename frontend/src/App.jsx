@@ -74,4 +74,38 @@ export default function App() {
         <div className="rail-footer">BUSINESS OPERATIONS<br />2026 EDITION</div>
       </aside>
 
-      <section class
+      <section className="workspace">
+        <header className="workspace-header">
+          <div>
+            <p className="eyebrow">CURRENT WORKLOAD</p>
+            <h2>Task register</h2>
+          </div>
+          <div className="date-stamp">WEEKLY REVIEW<br /><strong>ACTIVE</strong></div>
+        </header>
+
+      {notification && (
+        <div className={`notification ${notification.type}`}>
+          {notification.message}
+        </div>
+      )}
+
+      <TaskForm onTaskCreated={handleCreate} />
+
+      <div className="filter-container" aria-label="Filter tasks">
+        {['all', 'pending', 'completed'].map((status) => (
+          <button
+            key={status}
+            onClick={() => setFilter(status)}
+            className={`filter-btn ${filter === status ? 'active' : ''}`}
+          >
+            {status}
+          </button>
+        ))}
+      </div>
+
+      <TaskList tasks={tasks} onStatusChange={handleStatusChange} onDelete={handleDelete} />
+      </section>
+    </main>
+  );
+}
+
